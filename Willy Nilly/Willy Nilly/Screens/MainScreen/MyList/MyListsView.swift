@@ -52,14 +52,30 @@ struct MyListsView: View {
                         try! context.save()
                     }
                 }
-            }.listStyle(.plain)
-                .padding(.top)
-                .alert(item: $viewModel.alertItem) { alert in
-                    Alert(title: alert.title,
-                          message: alert.message,
-                          dismissButton: alert.dismissButton)
+            }
+            .listStyle(.plain)
+            .padding(.top)
+            .alert(item: $viewModel.alertItem) { alert in
+                Alert(title: alert.title,
+                      message: alert.message,
+                      dismissButton: alert.dismissButton)
+            }
+            .navigationTitle("Liked Movies")
+            .overlay {
+                if likedMovie.filter({ $0.tag == "Liked" }).isEmpty {
+                    VStack(spacing: 20){
+                        Spacer()
+                        Image(systemName: "heart.circle")
+                            .font(.system(size: 90, weight: .ultraLight))
+                            .foregroundStyle(.gray)
+                        Text("Start falling in love with any movies?")
+                            .font(.title3)
+                            .foregroundStyle(.gray)
+                        
+                        Spacer()
+                    }.opacity(0.7)
                 }
-                .navigationTitle("Liked Movies")
+            }
         }
     }
 }

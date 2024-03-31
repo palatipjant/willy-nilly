@@ -56,7 +56,7 @@ struct ReviewCard: View{
                         .scrollTransition { content, phase in
                             content
                                 .scaleEffect(phase.isIdentity ? 1 : 0.9)
-                                .blur(radius: phase.isIdentity ? 0 : 2)
+                                .blur(radius: phase.isIdentity ? 0 : 2.5)
                         }
                     }
                 }.padding(.leading)

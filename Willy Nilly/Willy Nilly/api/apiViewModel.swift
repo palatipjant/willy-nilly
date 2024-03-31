@@ -158,7 +158,7 @@ final class apiViewModel: ObservableObject, Observable {
         isLoading = true
         Task{
             do{
-                MovieByGenre = try await NetworkManager.shared.fetchMovieByGenre(genreID: genreID, page: page)
+                MovieByGenre.append(contentsOf: try await NetworkManager.shared.fetchMovieByGenre(genreID: genreID, page: page))
                 isLoading = false
             } catch {
                 alertItem = AlertContext.GeneralError

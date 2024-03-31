@@ -25,7 +25,7 @@ final class NetworkManager {
     private let popularPerson = baseURL + "/person/popular?language=en-US&page=1"
     
     let authToken = ""
-
+    
     private init() {}
     
     func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void) {

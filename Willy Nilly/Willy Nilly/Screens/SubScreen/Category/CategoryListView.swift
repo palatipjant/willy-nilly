@@ -30,6 +30,10 @@ struct CategoryListView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                             .contextMenu {
                                 ContextMenuMovieCell(movie: movie)
+                            }.scrollTransition { content, phase in
+                                content
+                                    .scaleEffect(phase.isIdentity ? 1 : 0.45)
+                                    .blur(radius: phase.isIdentity ? 0 : 2.5)
                             }
                     }
                     .buttonStyle(FlatLinkStyle())
@@ -39,7 +43,10 @@ struct CategoryListView: View {
         .scrollIndicators(.hidden)
         .navigationBarTitle(genre.name)
         .task {
+            viewModel.MovieByGenre.removeAll()
             viewModel.getMovieByGenre(genreID: String(genre.id), page: 1)
+            viewModel.getMovieByGenre(genreID: String(genre.id), page: 2)
+            viewModel.getMovieByGenre(genreID: String(genre.id), page: 3)
         }
     }
     

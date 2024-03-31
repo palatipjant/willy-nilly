@@ -60,13 +60,14 @@ struct SearchView: View {
                     VStack(spacing: 20){
                         Spacer()
                         Image(systemName: "text.magnifyingglass")
-                            .font(.system(size: 90))
-                            
+                            .font(.system(size: 90, weight: .ultraLight))
+                            .foregroundStyle(.gray)
                         Text("What movie do you remember?")
                             .font(.title3)
-                            .bold()
+                            .foregroundStyle(.gray)
+                        
                         Spacer()
-                    }.opacity(0.6)
+                    }.opacity(0.7)
                 }
             }
         }

@@ -24,9 +24,8 @@ struct HorizonScrollView: View {
                 NavigationLink(destination: AllMovieView(movie: movie_api, titleView: titleView)) {
                     Label("See All", systemImage: "arrow.right")
                         .labelStyle(TrailingIconLabelStyle())
-                        .font(.footnote)
+                        .font(.callout)
                         .padding(.trailing, 20)
-//                        .padding(.bottom, 25)
                         .padding(.top, 10)
                 }
             }
@@ -41,7 +40,7 @@ struct HorizonScrollView: View {
                                 .scrollTransition { content, phase in
                                     content
                                         .scaleEffect(phase.isIdentity ? 1 : 0.45)
-                                        .blur(radius: phase.isIdentity ? 0 : 5)
+                                        .blur(radius: phase.isIdentity ? 0 : 2.5)
                                 }
                                 .contextMenu {
                                     ContextMenuMovieCell(movie: movie)

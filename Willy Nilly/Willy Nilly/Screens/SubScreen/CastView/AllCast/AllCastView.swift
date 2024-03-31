@@ -29,7 +29,7 @@ struct AllCastView: View{
                             .scrollTransition { content, phase in
                                 content
                                     .scaleEffect(phase.isIdentity ? 1 : 0.45)
-                                    .blur(radius: phase.isIdentity ? 0 : 5)
+                                    .blur(radius: phase.isIdentity ? 0 : 2.5)
                             }
                             .overlay {
                                 OverlayCast(cast: cast)
