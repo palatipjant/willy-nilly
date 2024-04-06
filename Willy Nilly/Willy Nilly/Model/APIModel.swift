@@ -192,7 +192,22 @@ struct avatar_details: Codable, Hashable{
     let avatar_path: String?
 }
 
-
 struct PersonMovieCreditsResponse: Codable {
     let cast: [Movie]
+}
+
+struct MovieImg: Codable {
+    let backdrops: [backdrop]
+}
+
+struct backdrop: Codable{
+    let file_path: String?
+    let vote_average: Float
+    
+    var imageURL: URL? {
+        if let filepath = file_path {
+            return URL(string: "https://image.tmdb.org/t/p/w500" + filepath)
+        }
+        return nil
+    }
 }

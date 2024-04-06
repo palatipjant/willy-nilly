@@ -54,6 +54,9 @@ struct OverviewMovie: View {
                             if !viewModel.MovieCredits.isEmpty{
                                 HorizonCastView(titleView: "Top Billed Cast", cast: viewModel.MovieCredits)
                             }
+                            if !viewModel.movieImage.isEmpty{
+                                MovieImage(movieImage: viewModel.movieImage)
+                            }
                             if !viewModel.MovieReview.isEmpty{
                                 ReviewCard(movie_review: viewModel.MovieReview)
                             }
@@ -76,6 +79,7 @@ struct OverviewMovie: View {
             viewModel.getMovieCredits(movieID: String(movie.id))
             viewModel.MovieReview.removeAll()
             viewModel.getMovieReview(movieID: String(movie.id))
+            viewModel.getMovieImage(id: movie.id)
         }
         .ignoresSafeArea(edges: .top)
         .alert(item: $viewModel.alertItem) { alert in

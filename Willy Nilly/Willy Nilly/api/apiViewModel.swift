@@ -30,6 +30,7 @@ final class apiViewModel: ObservableObject, Observable {
     @Published var CastDetail: CastDetail = Mockdata.castDetailSample
     @Published var CastImage: [CastImage] = []
     @Published var MovieReview: [MovieReview] = []
+    @Published var movieImage: [backdrop] = []
     
     @Published var MovieDiscover: [Movie] = []
     
@@ -270,4 +271,19 @@ final class apiViewModel: ObservableObject, Observable {
             }
         }
     }
+    
+    func getMovieImage(id: Int) {
+        isLoading = true
+        Task{
+            do{
+                movieImage = try await NetworkManager.shared.fetchMovieImage(id: id)
+                isLoading = false
+            } catch {
+                alertItem = AlertContext.GeneralError
+                isLoading = false
+            }
+        }
+    }
+    
+    
 }

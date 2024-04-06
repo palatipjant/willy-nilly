@@ -405,4 +405,24 @@ final class NetworkManager {
         }
     }
     
+    func fetchMovieImage(id: Int) async throws -> [backdrop] {
+        
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)/images") else {
+            throw APError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        
+        request.addValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            
+            let decoder = JSONDecoder()
+            return try decoder.decode(MovieImg.self, from: data).backdrops
+        } catch {
+            throw APError.invalidData
+        }
+    }
+    
 }
