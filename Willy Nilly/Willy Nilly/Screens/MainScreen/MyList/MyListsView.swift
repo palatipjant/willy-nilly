@@ -66,10 +66,7 @@ struct MyListsView: View {
                     VStack(spacing: 20){
                         Spacer()
                         Image(systemName: "heart.circle")
-                            .font(.system(size: 90, weight: .ultraLight))
-                            .foregroundStyle(.gray)
-                        Text("Start falling in love with any movies?")
-                            .font(.title3)
+                            .font(.system(size: 90, weight: .light))
                             .foregroundStyle(.gray)
                         
                         Spacer()
