@@ -16,7 +16,6 @@ struct MyListsView: View {
     @Query private var seenMovie: [SaveLists]
     
     @EnvironmentObject var viewModel: apiViewModel
-    
     var body: some View {
         NavigationStack{
             List {
@@ -64,13 +63,13 @@ struct MyListsView: View {
             .overlay {
                 if likedMovie.filter({ $0.tag == "Liked" }).isEmpty {
                     VStack(spacing: 20){
+                        Image("liked")
+                            .resizable()
+                            .frame(width: 283.97, height: 234.63)
+                            .padding()
                         Spacer()
-                        Image(systemName: "heart.circle")
-                            .font(.system(size: 90, weight: .light))
-                            .foregroundStyle(.gray)
-                        
-                        Spacer()
-                    }.opacity(0.7)
+                    }
+                    .padding(.top, 100)
                 }
             }
         }

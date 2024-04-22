@@ -58,12 +58,14 @@ struct SearchView: View {
             .overlay {
                 if viewModel.SearchMovie.isEmpty {
                     VStack(spacing: 20){
+                        Image("no-result")
+                            .resizable()
+                            .frame(width: 231, height: 190.86)
+                            .padding()
                         Spacer()
-                        Image(systemName: "text.magnifyingglass")
-                            .font(.system(size: 90, weight: .light))
-                            .foregroundStyle(.gray)
-                        Spacer()
-                    }.opacity(0.7)
+                    }
+                    .opacity(0.7)
+                    .padding(.top, 100)
                 }
             }
         }

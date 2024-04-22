@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "MV5BNDk3NTEwNjc0MV5BMl5BanBnXkFtZTgwNzYxNTMwMzI@._V1_FMjpg_UX1000_.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +9,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "liked.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

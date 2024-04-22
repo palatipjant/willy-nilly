@@ -40,12 +40,10 @@ struct EachCastView: View{
                             VStack(alignment: .leading, spacing: 3) {
                                 Text(viewModel.CastDetail.biography ?? "")
                                     .multilineTextAlignment(.leading)
-                                    .lineLimit(isRead ? 100 : 3)
-                                if viewModel.CastDetail.biography?.count ?? 0 > 140 {
-                                    Button(isRead ? "Read Less" : "Read More" ) {
+                                    .lineLimit(isRead ? 200 : 4)
+                                    .onTapGesture {
                                         isRead.toggle()
                                     }
-                                }
                             }
                             .font(.system(size: 16, weight: .regular))
                             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)

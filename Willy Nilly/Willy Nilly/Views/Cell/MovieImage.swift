@@ -25,7 +25,7 @@ struct MovieImage: View {
                 LazyHStack{
                     ForEach(viewModel.movieImage, id: \.file_path) {image in
                         MovieRemoteImage(urlString: "https://image.tmdb.org/t/p/w500\(image.file_path ?? "")" )
-                            .frame(width: 230, height: 170)
+                            .frame(width: 265, height: 170)
                             .scaledToFit()
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .scrollTransition { content, phase in
@@ -33,7 +33,7 @@ struct MovieImage: View {
                                     .scaleEffect(phase.isIdentity ? 1 : 0.85)
                                     .blur(radius: phase.isIdentity ? 0 : 2.5)
                             }
-                            .aspectRatio(1.778, contentMode: .fit)
+                            .aspectRatio(1, contentMode: .fit)
                     }
                     .padding(.leading, 11)
                 }

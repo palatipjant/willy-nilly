@@ -22,7 +22,6 @@ final class ImageLoader: ObservableObject{
     }
 }
 
-
 struct RemoteImage: View {
     var image: Image?
     
@@ -30,7 +29,6 @@ struct RemoteImage: View {
         image?.resizable() ?? Image("movie_place").resizable()
     }
 }
-
 
 struct MovieRemoteImage: View{
     

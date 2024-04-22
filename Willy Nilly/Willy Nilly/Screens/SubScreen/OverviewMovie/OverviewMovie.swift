@@ -37,14 +37,12 @@ struct OverviewMovie: View {
                             Detail(movieDetail: viewModel.MovieDetail)
                             
                             VStack(alignment: .leading, spacing: 3) {
-                                Text(viewModel.MovieDetail.overview!)
+                                Text(viewModel.MovieDetail.overview ?? "")
                                     .multilineTextAlignment(.leading)
-                                    .lineLimit(isRead ? 20 : 3)
-                                if viewModel.CastDetail.biography?.count ?? 0 < 150 {
-                                    Button(isRead ? "Read Less" : "Read More" ) {
+                                    .lineLimit(isRead ? 30 : 4)
+                                    .onTapGesture {
                                         isRead.toggle()
                                     }
-                                }
                             }
                             .font(.system(size: 16, weight: .regular))
                             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)

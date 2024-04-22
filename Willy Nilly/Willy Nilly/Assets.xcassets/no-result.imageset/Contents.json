@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "bg_button@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bg_button@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "bg_button@3x.png",
+      "filename" : "NoResults@3x.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
