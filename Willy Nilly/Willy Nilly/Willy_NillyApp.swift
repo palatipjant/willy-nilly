@@ -14,7 +14,6 @@ struct Willy_NillyApp: App {
 
     @StateObject var viewModel = apiViewModel()
     
-    
     var body: some Scene {
         WindowGroup {
             TabHome()
